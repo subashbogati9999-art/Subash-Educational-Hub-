@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subash Educational Hub (SEHN)</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="#">
+        <img src="assets/subash-logo.jpg" alt="Subash Educational Hub logo">
+        <span>Subash Educational Hub 
+          (SEHN)</span>
+      </a>
+
+      <button id="menuButton" class="menu-button" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+
+      <ul id="menu" class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="auth-actions">
+        <a href="#live" class="live-button">Live</a>
+        <button id="loginButton" class="login-button" type="button">Log in</button>
+        <button id="signButton" class="sign-button" type="button">Join now</button>
+        
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="welcome">
+      <div class="welcome-text">
+        <p class="small-heading">Welcome to Subash Educational Hub</p>
+        <h1>Start your learning journey today.</h1>
+        <p>Register first to get a student profile and access lessons made for your class.</p>
+        <div class="welcome-points" aria-label="Registration benefits">
+          <span>✓ Personal student profile</span>
+          <span>✓ Class-based lessons</span>
+          <span>✓ Friendly learning support</span>
+        </div>
+      </div>
+
+      <div class="auth-modal" id="registrationModal" aria-hidden="true">
+        <div class="registration-card" id="registration" role="dialog" aria-modal="true" aria-labelledby="registrationTitle">
+          <button class="close-auth" id="closeRegistration" type="button" aria-label="Close registration form">×</button>
+        <div class="form-heading">
+          <div>
+            <p class="eyebrow">Step 1 of 1</p>
+            <h2 id="registrationTitle">Student registration</h2>
+          </div>
+          <span class="required-note"><span aria-hidden="true">*</span> Required</span>
+        </div>
+        <p class="form-intro">Enter your details below. We use this information to personalize your learning experience.</p>
+
+        <form class="sign-form" id="studentForm">
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="form-grid">
+              <label for="studentName">
+                <span>Student name <b aria-hidden="true">*</b></span>
+                <input id="studentName" name="studentName" type="text" placeholder="e.g. Subash Kumar" autocomplete="name" required>
+                <small>Use your full name.</small>
+              </label>
+
+              <label for="age">
+                <span>Age <b aria-hidden="true">*</b></span>
+                <input id="age" name="age" type="number" min="5" max="30" placeholder="e.g. 16" required>
+              </label>
+
+              <label for="mobile">
+                <span>Mobile number <b aria-hidden="true">*</b></span>
+                <input id="mobile" name="mobile" type="tel" placeholder="e.g. 9876543210" autocomplete="tel" pattern="[0-9 +()-]{7,}" required>
+              </label>
+
+              <label for="email">
+                <span>Email address <b aria-hidden="true">*</b></span>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+              </label>
+
+              <label class="full-width" for="address">
+                <span>Address <b aria-hidden="true">*</b></span>
+                <input id="address" name="address" type="text" placeholder="Town, district, or city" autocomplete="street-address" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Learning details</legend>
+            <div class="form-grid">
+              <label for="stream">
+                <span>Stream <b aria-hidden="true">*</b></span>
+                <select id="stream" name="stream" required>
+                  <option value="">Select stream</option>
+                  <option>Science</option>
+                  <option>Commerce</option>
+                  <option>Humanities</option>
+                </select>
+              </label>
+
+              <label for="className">
+                <span>Class <b aria-hidden="true">*</b></span>
+                <select id="className" name="className" required>
+                  <option value="">Select class</option>
+                  <option>6th</option>
+                  <option>7th</option>
+                  <option>8th</option>
+                  <option>9th</option>
+                  <option>10th</option>
+                  <option>11th</option>
+                  <option>12th</option>
+                </select>
+              </label>
+
+              <div class="form-group full-width">
+                <span id="gender-label">Gender <b aria-hidden="true">*</b></span>
+                <div class="gender-options" role="radiogroup" aria-labelledby="gender-label">
+                  <label><input type="radio" name="gender" value="male" required> Male</label>
+                  <label><input type="radio" name="gender" value="female"> Female</label>
+                  <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit-button">Create student profile <span aria-hidden="true">→</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Subash Educational Hub (SEHN)</h2>
+      <p>
+        Our goal is to make education easy to understand. Students can revise
+        lessons, read short notes, and use online resources for better practice.
+      </p>
+    </section>
+
+    <section id="subjects" class="subjects">
+      <h2>Our main subjects</h2>
+      <div class="subject-list">
+        <article>
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Chemistry laboratory equipment">
+          <h3>Chemistry</h3>
+          <p>Explore elements, chemical reactions, and the science of matter.</p>
+        </article>
+        <article>
+          <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=600&q=80" alt="Physics experiment with light">
+          <h3>Physics</h3>
+          <p>Understand energy, motion, forces, and how the world works.</p>
+        </article>
+        <article>
+          <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" alt="Mathematics formulas on a board">
+          <h3>Mathematics</h3>
+          <p>Practice numbers, formulas, and problem-solving step by step.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="videos" class="videos">
+      <h2>Learning videos</h2>
+      <p>Watch clear lessons and revise important topics at your own pace.</p>
+      <a class="button" href="https://www.youtube.com/" target="_blank" rel="noopener">Watch lessons</a>
+    </section>
+
+    <section id="notes" class="notes">
+      <h2>Helpful study tips</h2>
+      <ol>
+        <li>Make a small timetable for each subject.</li>
+        <li>Read the lesson and write important points.</li>
+        <li>Practice questions instead of only reading.</li>
+        <li>Ask questions when a topic is not clear.</li>
+      </ol>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Keep learning</h2>
+      <p>Have a question? Contact your teacher or study partner and keep moving forward.</p>
+      <p class="contact-email"><a href="mailto:subashbogati9999@gmail.com">subashbogati9999@gmail.com</a></p>
+    </section>
+
+    <section id="live" class="contact">
+      <h2>Live learning</h2>
+      <p>Live classes and announcements will appear here for logged-in students.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="assets/subash-logo.jpg" alt="Subash Educational Hub logo">
+      <span>Subash Educational Hub (SEHN)</span>
+    </div>
+    <p>&copy; 2026 Subash Educational Hub (SEHN)</p>
+    <div class="social-links">
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="social-link youtube" aria-label="Visit YouTube" title="YouTube">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.5a3.13 3.13 0 0 0-2.2-2.22C19.48 3.8 12 3.8 12 3.8s-7.48 0-9.3.48A3.13 3.13 0 0 0 .5 6.5 32.3 32.3 0 0 0 0 12c0 1.8.14 3.08.34 4.04.25 1.06.96 1.9 2.02 2.2 1.82.48 9.3.48 9.3.48s7.48 0 9.3-.48a3.13 3.13 0 0 0 2.2-2.22c.2-.96.34-2.24.34-4.04 0-1.8-.14-3.08-.34-4.04zM9.75 15.5v-7l6.5 3.5-6.5
+  3.5z" fill="currentColor"/></svg> 
+        
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-link instagram">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+        </span>
+      
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-link facebook">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.5l.5-3h-3V7.5c0-.9.6-1.5 1.5-1.5H16V3.2c-.6-.1-1.8-.2-2.8-.2-2.8 0-4.7 1.7-4.7 4.8V10H6v3h2.5v8h5z" fill="currentColor"/></svg>
+        </span>
+        
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="social-link tiktok">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.2 3.5c.4 1.5 1.5 2.6 3.1 3.1v2.2c-1.2-.1-2.3-.4-3.3-1.1V13.7c0 3.1-2.5 5.5-5.6 5.5s-5.6-2.5-5.6-5.6 2.5-5.6 5.6-5.6c.6 0 1.1.1 1.7.2v2.3a4.2 4.2 0 0 0-1.7-.4c-2.1 0-3.8 1.7-3.8 3.8s1.7 3.8 3.8 3.8a3.8 3.8 0 0 0 3.7-3.1V3.5h2.1z" fill="currentColor"/></svg>
+        </span>
+        
+      </a>
+    </div>
+  </footer>
+
+  <div class="auth-modal" id="loginModal" aria-hidden="true">
+    <div class="login-card" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <button class="close-auth" id="closeLogin" type="button" aria-label="Close login form">×</button>
+      <p class="eyebrow">Welcome back</p>
+      <h2 id="loginTitle">Student login</h2>
+      <p class="form-intro">Log in to continue learning with your student profile.</p>
+      <form class="login-form" id="loginForm">
+        <label for="loginEmail"><span>Email address <b aria-hidden="true">*</b></span>
+          <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email" required>
+        </label>
+        <label for="loginPassword"><span>Password <b aria-hidden="true">*</b></span>
+          <input id="loginPassword" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required>
+        </label>
+        <button class="submit-button" type="submit">Log in <span aria-hidden="true">→</span></button>
+        <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
+      </form>
+      <p class="switch-auth">New student? <button id="switchToRegistration" type="button">Create an account</button></p>
+    </div>
+  </div>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+    const navbar = document.querySelector(".navbar");
+    const signButton = document.getElementById("signButton");
+    const loginButton = document.getElementById("loginButton");
+    const registrationModal = document.getElementById("registrationModal");
+    const loginModal = document.getElementById("loginModal");
+    const closeRegistration = document.getElementById("closeRegistration");
+    const closeLogin = document.getElementById("closeLogin");
+    const loginForm = document.getElementById("loginForm");
+    const loginStatus = document.getElementById("loginStatus");
+    const switchToRegistration = document.getElementById("switchToRegistration");
+    const signForm = document.getElementById("studentForm");
+    const formStatus = document.getElementById("formStatus");
+    const navLinks = document.querySelectorAll("#menu a");
+
+    menuButton.addEventListener("click", function () {
+      menu.classList.toggle("show-menu");
+      navbar.classList.toggle("menu-open");
+      menuButton.setAttribute("aria-expanded", menu.classList.contains("show-menu"));
+    });
+
+    signButton.addEventListener("click", function () {
+      closeMobileMenu();
+      openModal(registrationModal, "studentName");
+    });
+
+    loginButton.addEventListener("click", function () {
+      closeMobileMenu();
+      openModal(loginModal, "loginEmail");
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    closeRegistration.addEventListener("click", function () {
+      closeModal(registrationModal);
+    });
+
+    closeLogin.addEventListener("click", function () {
+      closeModal(loginModal);
+    });
+
+    [registrationModal, loginModal].forEach(function (modal) {
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal(modal);
+        }
+      });
+    });
+
+    switchToRegistration.addEventListener("click", function () {
+      closeModal(loginModal);
+      openModal(registrationModal, "studentName");
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeModal(registrationModal);
+        closeModal(loginModal);
+      }
+    });
+
+    signForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!signForm.checkValidity()) {
+        formStatus.textContent = "Please complete the highlighted required fields.";
+        formStatus.className = "form-status error";
+        signForm.reportValidity();
+        return;
+      }
+      formStatus.textContent = "Your student profile is ready. Welcome to SEHN!";
+      formStatus.className = "form-status success";
+    });
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!loginForm.checkValidity()) {
+        loginStatus.textContent = "Enter a valid email and a password with at least 6 characters.";
+        loginStatus.className = "form-status error";
+        loginForm.reportValidity();
+        return;
+      }
+      loginStatus.textContent = "Login details accepted. Welcome back to SEHN!";
+      loginStatus.className = "form-status success";
+      closeModal(loginModal);
+    });
+
+    function openModal(modal, focusId) {
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("auth-open");
+      document.getElementById(focusId).focus();
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+      if (!document.querySelector(".auth-modal.show")) {
+        document.body.classList.remove("auth-open");
+      }
+    }
+
+    function closeMobileMenu() {
+      menu.classList.remove("show-menu");
+      navbar.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  </script>
+</body>
+</html>
